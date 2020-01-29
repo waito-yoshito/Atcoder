@@ -23,3 +23,47 @@ class C{
       return n * factorial(n - 1);
     }
 }
+
+class Stack{
+  int stack_size = 0;
+  int sp = 0;
+  Object stack[];
+
+  static final int defalt = 100;
+  
+  Stack(){
+    this(defalt);
+  }
+
+  Stack(int size){
+    stack = new Object[size];
+    stack_size = size;
+    sp = 0;
+  }
+
+  public void clear(){
+    Arrays.fill(stack, 0, sp, null);
+    sp = 0;
+  }
+
+  public void push(Object x){
+    if(sp >= stack_size){
+      throw new IllegalStateException("stack overflow");
+    }
+    stack[sp++] = x;
+  }
+
+  public Object pop(){
+    if(sp <= 0){
+      throw new EmptyStackException();
+    }
+    Object value = stack[--sp];
+    stack[sp] = null;
+    return value;
+  }
+
+  public boolean isEmpty(){
+    return sp == 0;
+  }
+
+}
