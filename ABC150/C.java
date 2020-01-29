@@ -6,14 +6,27 @@ class C{
       try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
         int N = Integer.parseInt(br.readLine());
         int result = 0;
+        result = factorial(N);
 
         String[] array_one = br.readLine().split(" ");
         String[] array_two = br.readLine().split(" ");
-        
-        result = factorial(N);
+
+        int[] factorial_array = new int[result];
+
+
 
         System.out.println(result);
       }
+    }
+
+    public static int dfs(int n){
+      int result = 0;
+      Stack s = new Stack(n);
+      boolean[][] M = new boolean[n][n];
+
+      
+
+      return result;
     }
 
     public static int factorial(int n){
